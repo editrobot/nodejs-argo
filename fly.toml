@@ -3,19 +3,18 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'nodejs-argo'
-primary_region = 'nrt'
+app = 'node-argo'
+primary_region = 'lax'
 
 [http_service]
   auto_start_machines = true
-  auto_stop_machines = true
+  auto_stop_machines = false
   force_https = true
   internal_port = 3000
-  min_machines_running = 0
+  min_machines_running = 1
   processes = ['app']
 
 [[vm]]
   cpu_kind = 'shared'
   cpus = 1
-  memory = '1gb'
   memory_mb = 256
